@@ -753,17 +753,26 @@ Note : It has been developed as mini project for IBM innovation program
           <div class="clearfix"> </div>
         </div>
         <div class="col-md-6 mail_right">
-          <form action="#" method="post">
-            <input type="text" name="Name" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}"
-              required="">
-            <input type="email" name="Email" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}"
-              required="">
-            <input type="text" name="Mobile number" value="Mobile number" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Mobile number';}"
-              required="">
-            <textarea name="Message..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message...';}" required="">Message...</textarea>
-            <input type="submit" value="Send">
+          
+          <form name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLSeg_WCqf3XXm-X2H-g048LWOWZyOTGb4oAZt4fpq-9w_UGw9Q/formResponse?" target="hidden_iframe" onsubmit="submitted=true;">
 
+            <input type="text" name="entry.1127758660" id="entry.1127758660" placeholder="Name" required="" pattern="[a-zA-Z]+" title="Please fill with only alphabets" />
+            <input type="email" name="entry.1579534191" id="entry.1579534191" placeholder="Email" required="" />
+            <input type="text" name="entry.312552707" id="entry.312552707" placeholder="Mobile number" required="" pattern="[7-9]{1}[0-9]{9}" title="Please enter valid mobile number" />
+            <textarea name="entry.1053628949" id="entry.1053628949" placeholder="Message..." required=""></textarea>
+            <input type="submit" value="Send Message" id="btnsubmit" />
+            
           </form>
+          <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
+
+          <script type="text/javascript">var submitted=false;</script>
+          <script type="text/javascript">
+              $('#gform').on('submit', function(e) {
+              //$('#gform *').fadeOut(2000);
+              $('#gform').prepend('<i>Hola! Thank you for your message. I wll get back to you soon...<i><br/><br/>');
+          });
+          </script>
+
         </div>
         <div class="clearfix"></div>
       </div>
