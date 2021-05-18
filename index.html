@@ -494,9 +494,19 @@ Note : It has been developed as mini project for IBM innovation program
                 <h4 class="timeline-title"><a href="#" target="_blank">SparcTeam Solutions Pvt Ltd, <i>Guntur, Andhra Pradesh</i></a></h4>
               </div>
               <div class="timeline-body">
-                <p>I was intrigued by the family culture at SparcTeam after speaking to some of my seniors who had gone through the SparcTeam internship programme. As SparcTeam is a professional web services network, I felt that an internship at SparcTeam was a great platform for me to gain deeper insights into software industry.</p>
-                <p class="comment more">I was interning at the Web & Portal Solutions department, during which I was assigned to a couple of major engagements and had the opportunity to put my coding/developing knowledge into practice and implement actual websites for the clients. My job scope included the handling of live websites and tasks which are normally assigned to full-time developers. I feel that it was an enriching experience to be part of SparcTeam internship programme as I got to learn a lot of technical knowledge and gain valuable hands-on development experience through my engagements. I also had the chance to participate in numerous firm events to bond and forge friendships with my colleagues and fellow interns.</p>
+                <p>I was intrigued by the family culture at SparcTeam after speaking to some of my seniors who had gone through the SparcTeam internship programme. As SparcTeam is a professional web services network, I felt that an internship at SparcTeam was a great platform for me to gain deeper insights into software industry. I was interning at the Web & Portal Solutions department, during which I was assigned to a couple of major engagements and had the opportunity to put my coding and...</p><a href="#" class="show_hide" data-content="toggle-text">Read More</a><p class="content"> developing knowledge into practice and implement actual websites for the clients. My job scope included the handling of live websites and tasks which are normally assigned to full-time developers. I feel that it was an enriching experience to be part of SparcTeam internship programme as I got to learn a lot of technical knowledge and gain valuable hands-on development experience through my engagements. I also had the chance to participate in numerous firm events to bond and forge friendships with my colleagues and fellow interns.</p>
               </div>
+              <script>
+              $(document).ready(function () {
+                $(".content").hide();
+                $(".show_hide").on("click", function (e) {
+                  e.preventDefault();
+                    var txt = $(".content").is(':visible') ? 'Read More' : 'Read Less';
+                    $(".show_hide").text(txt);
+                    $(this).next('.content').slideToggle(200);
+                });
+            });
+          </script>
             </div>
           </li>
           </ul>
@@ -767,10 +777,14 @@ Note : It has been developed as mini project for IBM innovation program
 
           <script type="text/javascript">var submitted=false;</script>
           <script type="text/javascript">
+            $(document).ready(function() {
               $('#gform').on('submit', function(e) {
+                var value = $('input[name="entry.1127758660"]').val();
+                console.log(value);
               //$('#gform *').fadeOut(2000);
-              $('#gform').prepend('<i>Hola! Thank you for your message. I wll get back to you soon...<i><br/><br/>');
+              $('#gform').prepend('<i>Hola,' + value + '! Thank you for your message. I wll get back to you soon...<i><br/><br/>');
           });
+        });
           </script>
 
         </div>
